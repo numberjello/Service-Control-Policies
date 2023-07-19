@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Statement1",
+      "Effect": "Deny",
+      "Action": [
+        "athena:CreateDataCatalog",
+        "athena:CreateNamedQuery",
+        "athena:CreatePreparedStatement",
+        "athena:CreateWorkGroup"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}
