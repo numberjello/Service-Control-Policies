@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DPS3",
+      "Effect": "Deny",
+      "Action": [
+        "s3:DeleteBucket",
+        "s3:PutBucketPolicy",
+        "s3:PutBucketAcl",
+        "s3:CreateBucket",
+        "s3:PutLifecycleConfiguration"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:PrincipalArn": [
+            "arn:aws:iam::ACCOUNT#:role/ROLE1"
+          ]
+        }
+      }
+    }
+  ]
+}
